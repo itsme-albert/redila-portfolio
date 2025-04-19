@@ -1,13 +1,8 @@
 import Link from 'next/link';
-import { Button } from '../ui/button';
-import ThemeToggle from './ThemeToggle';
 import { Menu } from 'lucide-react';
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from '../ui/sheet';
-
+import ThemeToggle from './ThemeToggle';
+import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 export default function Header() {
   const navItems = [
     { name: 'About', href: '#about' },
