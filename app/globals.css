@@ -1,26 +1,56 @@
 @import "tailwindcss";
 
+/* Light Mode Defaults */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8f9fa; /* Soft light gray */
+  --foreground: #1e1e1e; /* Almost black */
+  --accent: #00bfa6;     /* Teal green */
+  --accent-hover: #00a18d;
+  --secondary: #ff6b6b;  /* Coral */
 }
 
+/* Tailwind Theming */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f0f0f; /* Very dark gray */
+    --foreground: #ededed; /* Light gray text */
+    --accent: #00bfa6;     /* Teal (still works beautifully in dark) */
+    --accent-hover: #00a18d;
+    --secondary: #ff6b6b;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Optional: Button Styling */
+button,
+a.button {
+  background-color: var(--accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s ease;
+}
+
+button:hover,
+a.button:hover {
+  background-color: var(--accent-hover);
+}
+
+/* Optional: Add glowing hover effect to buttons */
+a.button.glow:hover {
+  box-shadow: 0 0 12px var(--accent);
 }
