@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Download, MapPin } from 'lucide-react';
+import { ArrowRight, Download, MapPin, Github, Facebook, Linkedin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -40,16 +40,29 @@ export default function Hero() {
             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
               I craft elegant, high-performance web applications with clean, maintainable code, delivering exceptional user experiences.
             </p>
-            <div className="flex flex-col gap-2 sm:flex-row">
-              <Button asChild size="lg" className="transition hover:scale-105">
-                <Link href="#projects">
-                  View Projects <ArrowRight className="ml-2 h-4 w-4" />
+            <div className="flex gap-4">
+                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Facebook className="h-5 w-5" />
                 </Link>
-              </Button>
-              <Button variant="outline" size="lg" className="transition hover:scale-105">
-                <Download className="mr-2 h-4 w-4" />
-                Download CV
-              </Button>
+                <Link href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Github className="h-5 w-5" />
+                </Link>
+                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                  <Linkedin className="h-5 w-5" />
+                </Link>
+            </div>
+            <div className="space-y-4">
+              <div className="flex flex-col gap-2 sm:flex-row">
+                <Button asChild size="lg" className="transition hover:scale-105">
+                  <Link href="#projects">
+                    View Projects <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" className="transition hover:scale-105">
+                  <Download className="mr-2 h-4 w-4" />
+                  Download CV
+                </Button>
+              </div>
             </div>
           </motion.div>
 
