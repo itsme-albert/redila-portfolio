@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { ArrowRight, Download } from 'lucide-react';
+import { ArrowRight, Download, MapPin } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -18,11 +18,24 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                Albert Redila
+            <div className="space-y-4">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Hi, I`m Albert 👋</h1>
+              <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl xl:text-2xl/none">
+                Software Developer
               </h1>
-              <p className="text-xl text-muted-foreground">Software Developer</p>
+              <div className="flex items-center gap-4 text-muted-foreground">
+                <div className="flex items-center gap-1.5">
+                  <MapPin className="h-4 w-4" />
+                  <span>Philippines</span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="relative flex h-3 w-3">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                  </span>
+                  <span>Available for projects</span>
+                </div>
+              </div>
             </div>
             <p className="max-w-[600px] text-lg text-muted-foreground md:text-xl">
               I craft elegant, high-performance web applications with clean, maintainable code, delivering exceptional user experiences.

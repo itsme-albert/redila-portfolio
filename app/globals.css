@@ -4,8 +4,8 @@
 :root {
   --background: #f8f9fa; /* Soft light gray */
   --foreground: #1e1e1e; /* Almost black */
-  --accent: #00bfa6;     /* Teal green */
-  --accent-hover: #00a18d;
+  --accent: #1f2020;     /* Teal green */
+  --accent-hover: #303131;
   --secondary: #ff6b6b;  /* Coral */
 }
 
@@ -23,8 +23,8 @@
   :root {
     --background: #0f0f0f; /* Very dark gray */
     --foreground: #ededed; /* Light gray text */
-    --accent: #00bfa6;     /* Teal (still works beautifully in dark) */
-    --accent-hover: #00a18d;
+    --accent: #1f2020;     /* Teal (still works beautifully in dark) */
+    --accent-hover: #303131;
     --secondary: #ff6b6b;
   }
 }
