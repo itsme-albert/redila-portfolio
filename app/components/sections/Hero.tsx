@@ -41,13 +41,13 @@ export default function Hero() {
               I craft elegant, high-performance web applications with clean, maintainable code, delivering exceptional user experiences.
             </p>
             <div className="flex gap-4">
-                <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.facebook.com/albert.redila.3/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <Facebook className="h-5 w-5" />
                 </Link>
-                <Link href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://github.com/itsme-albert" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <Github className="h-5 w-5" />
                 </Link>
-                <Link href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link href="https://www.linkedin.com/in/albert-redila-a79a37350/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
                   <Linkedin className="h-5 w-5" />
                 </Link>
             </div>
