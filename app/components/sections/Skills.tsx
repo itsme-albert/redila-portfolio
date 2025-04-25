@@ -1,7 +1,6 @@
 "use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Progress } from "@/components/ui/progress";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const fadeInUp = {
@@ -18,36 +17,21 @@ const fadeInUp = {
 };
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      category: "Frontend",
-      skills: [
-        { name: "HTML/CSS", level: 95 },
-        { name: "JavaScript", level: 90 },
-        { name: "React", level: 85 },
-        { name: "Next.js", level: 80 },
-        { name: "Tailwind CSS", level: 85 },
-      ],
-    },
-    {
-      category: "Backend",
-      skills: [
-        { name: "Node.js", level: 75 },
-        { name: "Express", level: 70 },
-        { name: "MongoDB", level: 65 },
-        { name: "API Design", level: 80 },
-      ],
-    },
-    {
-      category: "Tools & Others",
-      skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Figma", level: 75 },
-        { name: "Responsive Design", level: 95 },
-        { name: "Performance Optimization", level: 85 },
-        { name: "Accessibility", level: 80 },
-      ],
-    },
+  const skills = [
+    { name: "JavaScript", icon: "/icons/javascript.svg" },
+    { name: "TypeScript", icon: "/icons/typescript.svg" },
+    { name: "NextJS", icon: "/icons/nextjs.svg" },
+    { name: "Laravel", icon: "/icons/laravel.svg" },
+    { name: "Angular", icon: "/icons/angular.svg" },
+    { name: "MongoDB", icon: "/icons/mongodb.svg" },
+    { name: "MySQL", icon: "/icons/mysql.svg" },
+    { name: "Supabase", icon: "/icons/supabase.svg" },
+    { name: "Tailwind", icon: "/icons/tailwind.svg" },
+    { name: "Git", icon: "/icons/git.svg" },
+    { name: "Bitbucket", icon: "/icons/bitbucket.svg" },
+    { name: "Jira", icon: "/icons/jira.svg" },
+    { name: "SCRUM", icon: "/icons/scrum.svg" },
+    { name: "Convex", icon: "/icons/convex.svg" },
   ];
 
   return (
@@ -77,48 +61,41 @@ export default function Skills() {
             variants={fadeInUp}
             className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed"
           >
-            The technologies and tools I specialize in.
+            The skills, tools and technologies I am really good at:
           </motion.p>
         </motion.div>
 
-        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-3">
-          {skillCategories.map((category, index) => (
+        <motion.div 
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: { staggerChildren: 0.1 },
+            },
+          }}
+          className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-8 mt-16"
+        >
+          {skills.map((skill, index) => (
             <motion.div
-              key={index}
-              custom={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
+              key={skill.name}
               variants={fadeInUp}
+              custom={index}
+              className="flex flex-col items-center justify-center gap-2"
             >
-              <Card className="flex flex-col shadow-lg hover:scale-[1.02] transition-transform duration-300">
-                <CardHeader>
-                  <CardTitle>{category.category}</CardTitle>
-                  <CardDescription>My proficiency level</CardDescription>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <div className="space-y-4">
-                    {category.skills.map((skill, i) => (
-                      <div key={i} className="space-y-1">
-                        <div className="flex justify-between text-sm font-medium">
-                          <span>{skill.name}</span>
-                          <span className="text-muted-foreground">{skill.level}%</span>
-                        </div>
-                        <motion.div
-                          initial={{ width: 0 }}
-                          animate={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1.2, ease: "easeInOut" }}
-                        >
-                          <Progress value={skill.level} className="h-2 w-full bg-[var(--accent)]" />
-                        </motion.div>
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="relative w-16 h-16">
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span className="text-sm">{skill.name}</span>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

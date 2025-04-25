@@ -4,15 +4,16 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Projects() {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A modern e-commerce platform with responsive design, cart functionality, and payment integration.',
-      image: '/images/project1.jpg',
-      techs: ['Next.js', 'React', 'Tailwind CSS', 'Stripe'],
-      liveUrl: 'https://example.com',
+      title: 'CLPM Web',
+      description: 'A web application for online giving using Next.js, shadcn, and Tailwind CSS.',
+      image: '/clpm.png',
+      techs: ['Next.js', 'Tailwind CSS', 'Shadcn', 'Supabase'],
+      liveUrl: 'https://clpm-online-giving.vercel.app/',
       githubUrl: 'https://github.com/yourusername/project'
     },
     {
@@ -34,8 +35,8 @@ export default function Projects() {
   ];
 
   return (
-    <section className="w-full py-24 md:py-32" id="projects">
-      <div className="container px-4 md:px-6">
+    <section className="w-full py-24 md:py-32 bg-gradient-to-br from-purple-300/20 via-blue-100/15 to-pink-100/10 backdrop-blur-sm" id="projects">
+      <div className="cabsolute inset-0 ">
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
@@ -51,10 +52,15 @@ export default function Projects() {
         </div>
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 py-12 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden flex flex-col">
+            <Card key={index} className="overflow-hidden flex flex-col border-none">
               <div className="aspect-video w-full overflow-hidden bg-muted">
-                <div className="h-full w-full flex items-center justify-center text-muted-foreground">
-                  Project Image
+                <div className="relative aspect-video w-full bg-muted">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <CardHeader>

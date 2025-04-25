@@ -8,7 +8,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="w-full py-24 md:py-32 lg:py-40 border-b" id="home">
+    <section className="w-full py-24 md:py-32 lg:py-40" id="home">
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_600px] items-center">
           {/* TEXT SECTION */}
