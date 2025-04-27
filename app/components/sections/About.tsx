@@ -31,7 +31,7 @@ export default function About() {
           >
             <div className="relative aspect-square w-full max-w-xs sm:max-w-md overflow-hidden border bg-muted shadow-lg">
               <Image
-                src="/about.jpg"
+                src="/profile.jpg"
                 alt="Albert Redila"
                 fill
                 className="object-cover"

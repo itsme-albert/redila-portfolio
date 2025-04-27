@@ -77,7 +77,7 @@ export default function Hero() {
           >
             <div className="relative aspect-square w-full max-w-xs sm:max-w-md overflow-hidden rounded-full border bg-muted shadow-lg">
               <Image
-                src="/hero.jpg"
+                src="/profile2.jpg"
                 alt="Albert Redila"
                 fill
                 className="object-cover"
