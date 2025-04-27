@@ -2,14 +2,34 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 
-const ThemeProviderContext = createContext();
+type Theme = "dark" | "light" | "system";
+
+type ThemeProviderState = {
+  theme: Theme;
+  setTheme: (theme: Theme) => void;
+};
+
+const initialState: ThemeProviderState = {
+  theme: "system",
+  setTheme: () => null,
+};
+
+const ThemeProviderContext = createContext<ThemeProviderState>(initialState);
+
+interface ThemeProviderProps {
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+  storageKey?: string;
+  attribute?: string;
+  enableSystem?: boolean;
+}
 
 export function ThemeProvider({
   children,
   defaultTheme = "system",
   storageKey = "theme",
   ...props
-}) {
+}: ThemeProviderProps) {
   const [theme, setTheme] = useState(defaultTheme);
 
   useEffect(() => {
@@ -30,7 +50,7 @@ export function ThemeProvider({
 
   const value = {
     theme,
-    setTheme: (newTheme) => {
+    setTheme: (newTheme:any) => {
       localStorage.setItem(storageKey, newTheme);
       setTheme(newTheme);
     },

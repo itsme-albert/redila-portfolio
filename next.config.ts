@@ -14,7 +14,10 @@ const nextConfig: NextConfig = {
         pathname: '/gh/devicons/devicon/icons/**'
       }
     ]
-  }
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;

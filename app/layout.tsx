@@ -11,7 +11,7 @@ export const metadata = {
   description: 'Professional e-portfolio showcasing my skills, experience, and projects',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.className} min-h-screen bg-background antialiased`}>
