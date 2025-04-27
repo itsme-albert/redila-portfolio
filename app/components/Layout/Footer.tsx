@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="w-full border-t bg-background">
       <div className="container flex flex-col items-center justify-between gap-4 py-10 md:flex-row">
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Albert Redila. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
           <Link 

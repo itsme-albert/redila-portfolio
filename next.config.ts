@@ -13,7 +13,8 @@ const nextConfig: NextConfig = {
         hostname: 'cdn.jsdelivr.net',
         pathname: '/gh/devicons/devicon/icons/**'
       }
-    ]
+    ],
+    unoptimized: true
   },
   eslint: {
     ignoreDuringBuilds: true,
