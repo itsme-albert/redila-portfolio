@@ -18,20 +18,20 @@ const fadeInUp = {
 
 export default function Skills() {
   const skills = [
-    { name: "JavaScript", icon: "/icons/javascript.svg" },
-    { name: "TypeScript", icon: "/icons/typescript.svg" },
-    { name: "NextJS", icon: "/icons/nextjs.svg" },
+    { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+    { name: "NextJS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
     { name: "Laravel", icon: "/icons/laravel.svg" },
-    { name: "Angular", icon: "/icons/angular.svg" },
-    { name: "MongoDB", icon: "/icons/mongodb.svg" },
-    { name: "MySQL", icon: "/icons/mysql.svg" },
-    { name: "Supabase", icon: "/icons/supabase.svg" },
+    { name: "Angular", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" },
+    { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" },
+    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original-wordmark.svg" },
+    { name: "Supabase", icon: "/icons/supabase.png" },
     { name: "Tailwind", icon: "/icons/tailwind.svg" },
-    { name: "Git", icon: "/icons/git.svg" },
-    { name: "Bitbucket", icon: "/icons/bitbucket.svg" },
+    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "Bitbucket", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original-wordmark.svg" },
     { name: "Jira", icon: "/icons/jira.svg" },
     { name: "SCRUM", icon: "/icons/scrum.svg" },
-    { name: "Convex", icon: "/icons/convex.svg" },
+    { name: "Convex", icon: "/icons/convex.png" },
   ];
 
   return (

@@ -58,10 +58,12 @@ export default function Hero() {
                     View Projects <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button variant="outline" size="lg" className="transition hover:scale-105">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download CV
-                </Button>
+                <Link href="https://drive.google.com/file/d/1KHTurpXbaZFoPtuctTq4TwF1KT9GGvII/view?usp=sharing">
+                  <Button variant="outline" size="lg" className="transition hover:scale-105">
+                    <Download className="mr-2 h-4 w-4" />
+                      Download CV
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
