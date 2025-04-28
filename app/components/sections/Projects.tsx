@@ -17,20 +17,20 @@ export default function Projects() {
       githubUrl: 'https://github.com/yourusername/project'
     },
     {
-      title: 'Task Management App',
-      description: 'A productivity app for tracking tasks with drag-and-drop functionality and team collaboration features.',
-      image: '/images/project2.jpg',
-      techs: ['React', 'Redux', 'Node.js', 'MongoDB'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/yourusername/project'
+      title: 'Sales Management System With TouchScreen Ordering Interface',
+      description: 'A sales management system with touchscreen ordering interface for restaurants, featuring tracking of orders and sales management.',
+      image: '/capstone.png',
+      techs: ['Angular', 'Laravel', 'MySQL'],
+      liveUrl: 'https://docs.google.com/document/d/1yppa5jvXFJ4WWdtpurVcEDkojQCtldSZ3DHZxZdgbUg/edit?usp=sharing',
+      githubUrl: 'https://github.com/rjezryl/MommyLa-SMS.git'
     },
     {
-      title: 'Portfolio Website',
-      description: 'A professional portfolio website showcasing projects and skills with a modern, responsive design.',
-      image: '/images/project3.jpg',
-      techs: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/yourusername/project'
+      title: 'Hotel Booking Website',
+      description: 'An ongoing development of a hotel booking website with modern features and user-friendly interface.',
+      image: '/hotel.png',
+      techs: ['Next.js', 'Tailwind CSS', 'Shadcn', 'Supabase'],
+      liveUrl: 'https://hotel-booking-navy-three.vercel.app/',
+      githubUrl: ''
     }
   ];
 
@@ -76,7 +76,7 @@ export default function Projects() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <Link className='hover:text-white' href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
                     Code
                   </Link>

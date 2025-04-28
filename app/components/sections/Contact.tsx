@@ -24,7 +24,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 py-12 lg:grid-cols-3">
-          <Card className="lg:col-span-2">
+          <Card className="lg:col-span-2 border-none">
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
               <CardDescription>Fill out the form below to get in touch with me.</CardDescription>
@@ -33,19 +33,19 @@ export default function Contact() {
               <form className="grid gap-4">
                 <div className="grid gap-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Your name" />
+                  <Input id="name" placeholder="Your name" className="border-sm border-gray-500"/>
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Your email" />
+                  <Input id="email" type="email" placeholder="Your email" className="border-sm border-gray-500"/>
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Subject" />
+                  <Input id="subject" placeholder="Subject" className="border-sm border-gray-500"/>
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Your message" rows={5} />
+                  <Textarea id="message" placeholder="Your message" rows={5} className="border-sm border-gray-500"/>
                 </div>
               </form>
             </CardContent>
@@ -53,7 +53,7 @@ export default function Contact() {
               <Button type="submit" className="w-full">Send Message</Button>
             </CardFooter>
           </Card>
-          <Card>
+          <Card className='border-none'>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
               <CardDescription>Other ways to reach me</CardDescription>
@@ -63,21 +63,21 @@ export default function Contact() {
                 <Mail className="h-6 w-6 text-primary" />
                 <div>
                   <p className="text-sm font-medium">Email</p>
-                  <p className="text-sm text-muted-foreground">your.email@example.com</p>
+                  <p className="text-sm text-muted-foreground">albertmejicoredila@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <Phone className="h-6 w-6 text-primary" />
                 <div>
                   <p className="text-sm font-medium">Phone</p>
-                  <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                  <p className="text-sm text-muted-foreground">+63 963 819 6445</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">
                 <MapPin className="h-6 w-6 text-primary" />
                 <div>
                   <p className="text-sm font-medium">Location</p>
-                  <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                  <p className="text-sm text-muted-foreground">334 Kalabasa Street, Tumana, Sta Maria, Bulacan, Philippines</p>
                 </div>
               </div>
             </CardContent>

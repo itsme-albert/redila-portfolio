@@ -3,27 +3,27 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 
 export default function Experience() {
-  const experiences = [
+  const education = [
     {
-      title: 'Senior Frontend Developer',
-      company: 'Tech Company Inc.',
-      period: 'Jan 2023 - Present',
-      description: 'Led the development of the company\'s flagship product, improving performance by 40%. Mentored junior developers and implemented modern frontend practices.',
-      skills: ['React', 'NextJS', 'TypeScript', 'TailwindCSS']
+      title: 'Bachelor of Science in Information Technology',
+      institution: 'Northern Luzon Adventist College, Philippines',
+      period: '2021 - 2025',
+      description: 'Graduating student with focus on web development and software engineering. Participated in various academic projects',
+      achievements: ['Coming Soon..']
     },
     {
-      title: 'Frontend Developer',
-      company: 'Digital Agency XYZ',
-      period: 'Jun 2020 - Dec 2022',
-      description: 'Developed responsive web applications for clients across various industries. Worked closely with designers to ensure pixel-perfect implementation.',
-      skills: ['React', 'JavaScript', 'CSS', 'Redux']
+      title: 'Web Development Internship',
+      institution: 'Tito Solutions',
+      period: 'February 2025 - April 2025',
+      description: 'Gained hands-on experience in modern web development technologies. Contributed to real-world projects and learned industry best practices.',
+      achievements: ['Developed responsive web applications', 'Collaborated with senior developers', 'Learned modern frameworks']
     },
     {
-      title: 'Junior Web Developer',
-      company: 'Startup ABC',
-      period: 'Feb 2019 - May 2020',
-      description: 'Contributed to the company\'s web platform development. Implemented features and fixed bugs in an agile environment.',
-      skills: ['HTML', 'CSS', 'JavaScript', 'Vue.js']
+      title: 'Academic Projects',
+      institution: 'Northern Luzon Adventist College, Philippines',
+      period: '2021 - 2025',
+      description: 'Led and contributed to various academic projects, applying theoretical knowledge to practical applications.',
+      achievements: ['E-commerce Platform Development', 'Sales Management and POS System', 'Mobile App Development', 'Food Delivery Applications']
     }
   ];
 
@@ -33,32 +33,32 @@ export default function Experience() {
         <div className="flex flex-col items-center justify-center space-y-4 text-center">
           <div className="space-y-2">
             <div className="inline-block rounded-lg bg-primary px-3 py-1 text-sm text-primary-foreground">
-              Experience
+              Education & Experience
             </div>
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-              Professional Journey
+              Academic Journey
             </h2>
             <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-              My professional experience and career milestones.
+              My educational background and academic achievements.
             </p>
           </div>
         </div>
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-12">
-          {experiences.map((exp, index) => (
-            <Card key={index}>
+          {education.map((edu, index) => (
+            <Card key={index} className="border-none">
               <CardHeader>
                 <div className="flex flex-col justify-between gap-2 md:flex-row md:items-center">
                   <div>
-                    <CardTitle>{exp.title}</CardTitle>
-                    <CardDescription>{exp.company} | {exp.period}</CardDescription>
+                    <CardTitle>{edu.title}</CardTitle>
+                    <CardDescription>{edu.institution} | {edu.period}</CardDescription>
                   </div>
                 </div>
               </CardHeader>
               <CardContent>
-                <p className="text-muted-foreground mb-4">{exp.description}</p>
+                <p className="text-muted-foreground mb-4">{edu.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {exp.skills.map((skill, i) => (
-                    <Badge key={i} variant="secondary">{skill}</Badge>
+                  {edu.achievements.map((achievement, i) => (
+                    <Badge key={i} variant="secondary">{achievement}</Badge>
                   ))}
                 </div>
               </CardContent>

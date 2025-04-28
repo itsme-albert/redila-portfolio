@@ -11,7 +11,6 @@ export default function Hero() {
     <section className="w-full py-24 md:py-32 lg:py-40" id="home">
       <div className="container px-4 md:px-6">
         <div className="grid gap-12 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_600px] items-center">
-          {/* TEXT SECTION */}
           <motion.div
             className="flex flex-col justify-center space-y-6"
             initial={{ opacity: 0, x: -50 }}
