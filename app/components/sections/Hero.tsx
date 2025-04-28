@@ -8,19 +8,19 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="w-full py-24 md:py-32 lg:py-40" id="home">
+    <section className="w-full py-16 md:py-24 lg:py-32" id="home">
       <div className="container px-4 md:px-6">
-        <div className="grid gap-12 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_600px] items-center">
+        <div className="grid gap-8 md:gap-12 lg:grid-cols-[1fr_400px] xl:grid-cols-[1fr_600px] items-center">
           <motion.div
-            className="flex flex-col justify-center space-y-6"
+            className="flex flex-col justify-center space-y-4 md:space-y-6 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="space-y-4">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">Hi, I`m Albert 👋</h1>
-              <h1 className="text-2xl font-bold tracking-tighter sm:text-2xl xl:text-2xl/none">
-                Software Developer
+            <div className="space-y-3 md:space-y-4">
+              <h1 className="text-2xl md:text-3xl lg:text-5xl xl:text-6xl font-bold tracking-tighter">Hi, I`m Albert 👋</h1>
+              <h1 className="text-xl md:text-2xl font-bold tracking-tighter">
+                Full Stack Developer
               </h1>
               <div className="flex items-center gap-4 text-muted-foreground">
                 <div className="flex items-center gap-1.5">
@@ -74,7 +74,7 @@ export default function Hero() {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
           >
-            <div className="relative aspect-square w-full max-w-xs sm:max-w-md overflow-hidden rounded-full border bg-muted shadow-lg">
+            <div className="relative aspect-square w-full max-w-[250px] sm:max-w-xs md:max-w-md mx-auto overflow-hidden rounded-full border bg-muted shadow-lg">
               <Image
                 src="/profile2.JPG"
                 alt="Albert Redila"
