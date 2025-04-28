@@ -20,7 +20,7 @@ export default function Hero() {
             <div className="space-y-2 sm:space-y-3 md:space-y-4">
               <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold tracking-tighter">Hi, I`m Albert 👋</h1>
               <h2 className="text-lg sm:text-xl md:text-2xl font-bold tracking-tighter text-muted-foreground">
-                Full Stack Developer
+                Web Developer
               </h2>
               <div className="flex flex-wrap justify-center lg:justify-start gap-3 sm:gap-4 text-muted-foreground text-sm sm:text-base">
                 <div className="flex items-center gap-1.5">
