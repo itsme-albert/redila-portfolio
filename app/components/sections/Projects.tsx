@@ -76,7 +76,7 @@ export default function Projects() {
               </CardContent>
               <CardFooter className="flex justify-between">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <Link className='hover:text-white' href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
                     Code
                   </Link>
