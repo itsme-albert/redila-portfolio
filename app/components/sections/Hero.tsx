@@ -57,7 +57,7 @@ export default function Hero() {
                     View Projects <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto transition hover:scale-105">
+                <Button asChild variant="outline" size="lg" className="w-full sm:w-auto transition hover:scale-105 bg-[#252525] text-white">
                   <Link href="https://drive.google.com/file/d/1KHTurpXbaZFoPtuctTq4TwF1KT9GGvII/view?usp=sharing" target="_blank" rel="noopener noreferrer">
                     <Download className="mr-2 h-4 w-4" />
                     Download CV
