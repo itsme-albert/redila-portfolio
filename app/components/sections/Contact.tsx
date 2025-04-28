@@ -50,10 +50,10 @@ export default function Contact() {
               </form>
             </CardContent>
             <CardFooter>
-              <Button type="submit" className="w-full">Send Message</Button>
+              <Button type="submit" className="w-full cursor-pointer">Send Message</Button>
             </CardFooter>
           </Card>
-          <Card className='border-none'>
+          <Card className='border-none bg-[#252525] text-white'>
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
               <CardDescription>Other ways to reach me</CardDescription>

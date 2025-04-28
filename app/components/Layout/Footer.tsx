@@ -3,7 +3,7 @@ import { Github, Linkedin, Facebook } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t bg-[#333] text-white">
+    <footer className="w-full border-t bg-[#252525] text-white">
       <div className="container flex flex-col items-center justify-between gap-4 py-10 md:flex-row">
         <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
           © {new Date().getFullYear()} Albert Redila. All rights reserved.
