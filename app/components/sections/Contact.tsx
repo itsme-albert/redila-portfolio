@@ -123,7 +123,7 @@ export default function Contact() {
               <CardFooter>
                 <Button
                   type="submit"
-                  className="w-full cursor-pointer"
+                  className="w-full cursor-pointer mt-2"
                   disabled={isLoading}
                 >
                   {isLoading ? 'Sending...' : 'Send Message'}

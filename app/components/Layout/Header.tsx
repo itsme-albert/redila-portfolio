@@ -2,12 +2,14 @@
 
 import Link from 'next/link';
 import { Menu } from 'lucide-react';
+import { useState } from 'react';
 // import ThemeToggle from './ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { motion } from 'framer-motion';
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
   const navItems = [
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
@@ -78,7 +80,7 @@ export default function Header() {
         {/* Mobile Menu */}
         <div className="flex items-center gap-2 md:hidden">
           {/* <ThemeToggle /> */}
-          <Sheet>
+          <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="h-6 w-6 text-white" />
@@ -102,6 +104,7 @@ export default function Header() {
                       <Link
                         href={item.href}
                         className="flex items-center py-2 text-base font-medium text-[var(--foreground)] hover:text-[var(--accent)] transition-all duration-200 hover:translate-x-2"
+                        onClick={() => setOpen(false)}
                       >
                         {item.name}
                       </Link>
@@ -118,7 +121,7 @@ export default function Header() {
                     asChild
                     className="w-full bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white transition-all duration-200 hover:scale-105"
                   >
-                    <Link href="#contact">Hire Me</Link>
+                    <Link href="#contact" onClick={() => setOpen(false)}>Hire Me</Link>
                   </Button>
                 </motion.div>
               </div>
