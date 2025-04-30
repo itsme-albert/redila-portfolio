@@ -1,3 +1,4 @@
+'use client';
 
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,8 +6,45 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, MapPin } from 'lucide-react';
+import { useState } from 'react';
+import { toast } from 'sonner';
+import { submitContactForm } from '@/app/actions/contact';
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsLoading(true);
+
+    try {
+      const result = await submitContactForm(formData);
+      
+      if (result.success) {
+        toast.success('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' });
+      } else {
+        throw new Error(result.error);
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      toast.error('Failed to send message. Please try again.');
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
   return (
     <section className="w-full py-12 md:py-24 lg:py-32" id="contact">
       <div className="container px-4 md:px-6">
@@ -29,29 +67,69 @@ export default function Contact() {
               <CardTitle>Send a Message</CardTitle>
               <CardDescription>Fill out the form below to get in touch with me.</CardDescription>
             </CardHeader>
-            <CardContent>
-              <form className="grid gap-3 md:gap-4">
+            <form onSubmit={handleSubmit}>
+              <CardContent className="grid gap-3 md:gap-4">
                 <div className="grid gap-1.5 md:gap-2">
                   <Label htmlFor="name">Name</Label>
-                  <Input id="name" placeholder="Your name" className="border-sm border-gray-500"/>
+                  <Input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="Your name"
+                    className="border-sm border-gray-500"
+                    required
+                  />
                 </div>
                 <div className="grid gap-1.5 md:gap-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="Your email" className="border-sm border-gray-500"/>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    placeholder="Your email"
+                    className="border-sm border-gray-500"
+                    required
+                  />
                 </div>
                 <div className="grid gap-1.5 md:gap-2">
                   <Label htmlFor="subject">Subject</Label>
-                  <Input id="subject" placeholder="Subject" className="border-sm border-gray-500"/>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
+                    onChange={handleChange}
+                    placeholder="Subject"
+                    className="border-sm border-gray-500"
+                    required
+                  />
                 </div>
                 <div className="grid gap-1.5 md:gap-2">
                   <Label htmlFor="message">Message</Label>
-                  <Textarea id="message" placeholder="Your message" rows={5} className="border-sm border-gray-500"/>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Your message"
+                    rows={5}
+                    className="border-sm border-gray-500"
+                    required
+                  />
                 </div>
-              </form>
-            </CardContent>
-            <CardFooter>
-              <Button type="submit" className="w-full cursor-pointer">Send Message</Button>
-            </CardFooter>
+              </CardContent>
+              <CardFooter>
+                <Button
+                  type="submit"
+                  className="w-full cursor-pointer"
+                  disabled={isLoading}
+                >
+                  {isLoading ? 'Sending...' : 'Send Message'}
+                </Button>
+              </CardFooter>
+            </form>
           </Card>
           <Card className='border-none bg-[#252525] text-white'>
             <CardHeader>
